@@ -162,72 +162,64 @@
         <li><a href="#">Settings</a></li>
       </ul>
     </nav>
+        <div class="form-container">
+            <h2>Add New Client</h2>
+            <form id="client-form">
+                <label for="name">Client Name:</label>
+                <input type="text" id="name" placeholder="Enter client name" required>
 
-    <!-- Main Content -->
-    <div class="container">
-      <div class="form-container">
-        <h2>Add New Client</h2>
-        <form id="client-form">
-          <label for="name">Client Name:</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter client name"
-            required
-          />
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter client email" required>
 
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter client email"
-            required
-          />
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter client phone" required>
 
-          <label for="phone">Phone Number:</label>
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Enter client phone"
-            required
-          />
+                <label for="address">Address:</label>
+                <textarea id="address" rows="3" placeholder="Enter client address"></textarea>
 
-          <label for="address">Address:</label>
-          <textarea
-            id="address"
-            rows="3"
-            placeholder="Enter client address"
-          ></textarea>
+                <button type="submit">Add Client</button>
+            </form>
+        </div>
 
-          <button type="submit">Add Client</button>
-        </form>
-      </div>
-
-      <!-- Client Table -->
-      <div class="table-container">
-        <h2>Client List</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="client-list">
-            <!-- Client data will be dynamically added here -->
-            <tr>
-              <td>Djily SARR</td>
-              <td>Djilysarr275@gmail.com</td>
-              <td>08978899</td>
-              <td>512 rue</td>
-              <td>n/a</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <!-- Client Table -->
+        <div class="table-container">
+            <h2>Client List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="client-list">
+                    <!-- Client data will be dynamically added here -->
+                    <tr>
+                        <th>Abdelfattah</th>
+                        <th>RABOU</th>
+                        <th>0625484555</th>
+                        <th>Rue ...</th>
+                        <th>Actions...</th>
+                    </tr>
+                    <tr>
+                        <td>Mouhamed GUEYE</td>
+                        <td>mouhamedgueye987@gmail.com</td>
+                        <td>0677930383</td>
+                        <td>89 rue</td>
+                        <td>n/a</td>
+                    </tr>
+                    <tr>
+                        <td>Djily SARR</td>
+                        <td>Djilysarr275@gmail.com</td>
+                        <td>08978899</td>
+                        <td>512 rue</td>
+                        <td>n/a</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="script.js"></script>
