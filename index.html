@@ -1,210 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Client Management Interface</title>
-    <style> 
-	* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
 
-body {
-    background-color: #f4f4f9;
-}
+      body {
+        background-color: #f4f4f9;
+      }
 
-nav {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+      nav {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-nav h1 {
-    font-size: 1.5rem;
-}
+      nav h1 {
+        font-size: 1.5rem;
+      }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
 
-nav ul li {
-    display: inline;
-}
+      nav ul li {
+        display: inline;
+      }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
-    gap: 20px;
-}
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: flex;
+        gap: 20px;
+      }
 
-.form-container {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    border-radius: 8px;
-}
+      .form-container {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        border-radius: 8px;
+      }
 
-.form-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
+      .form-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
 
-.form-container label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #666;
-}
+      .form-container label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #666;
+      }
 
-.form-container input,
-.form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+      .form-container input,
+      .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
 
-.form-container button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+      .form-container button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-.form-container button:hover {
-    background-color: #0056b3;
-}
+      .form-container button:hover {
+        background-color: #0056b3;
+      }
 
-.table-container {
-    flex: 2;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+      .table-container {
+        flex: 2;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
 
-.table-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
+      .table-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-table thead {
-    background-color: #007bff;
-    color: white;
-}
+      table thead {
+        background-color: #007bff;
+        color: white;
+      }
 
-table th,
-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
+      table th,
+      table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
 
-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
+      table tbody tr:hover {
+        background-color: #f1f1f1;
+      }
 
-.actions {
-    display: flex;
-    gap: 10px;
-}
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
 
-.actions button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+      .actions button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-.actions .edit {
-    background-color: #ffc107;
-    color: white;
-}
+      .actions .edit {
+        background-color: #ffc107;
+        color: white;
+      }
 
-.actions .delete {
-    background-color: #dc3545;
-    color: white;
-}
-
+      .actions .delete {
+        background-color: #dc3545;
+        color: white;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation Bar -->
     <nav>
-        <h1>Client Management</h1>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Settings</a></li>
-        </ul>
+      <h1>Client Management</h1>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
     </nav>
 
     <!-- Main Content -->
     <div class="container">
-        <div class="form-container">
-            <h2>Add New Client</h2>
-            <form id="client-form">
-                <label for="name">Client Name:</label>
-                <input type="text" id="name" placeholder="Enter client name" required>
+      <div class="form-container">
+        <h2>Add New Client</h2>
+        <form id="client-form">
+          <label for="name">Client Name:</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter client name"
+            required
+          />
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter client email" required>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter client email"
+            required
+          />
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" placeholder="Enter client phone" required>
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter client phone"
+            required
+          />
 
-                <label for="address">Address:</label>
-                <textarea id="address" rows="3" placeholder="Enter client address"></textarea>
+          <label for="address">Address:</label>
+          <textarea
+            id="address"
+            rows="3"
+            placeholder="Enter client address"
+          ></textarea>
 
-                <button type="submit">Add Client</button>
-            </form>
-        </div>
+          <button type="submit">Add Client</button>
+        </form>
+      </div>
 
-        <!-- Client Table -->
-        <div class="table-container">
-            <h2>Client List</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="client-list">
-                    <!-- Client data will be dynamically added here -->
-                </tbody>
-            </table>
-        </div>
+      <!-- Client Table -->
+      <div class="table-container">
+        <h2>Client List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="client-list">
+            <!-- Client data will be dynamically added here -->
+            <tr>
+              <td>Djily SARR</td>
+              <td>Djilysarr275@gmail.com</td>
+              <td>08978899</td>
+              <td>512 rue</td>
+              <td>n/a</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
